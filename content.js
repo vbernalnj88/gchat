@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.7 — retry failed messages on sync)
+ * content.js — GG Chat Tracker Content Script  (v1.8 — added FORCE_RESEND_ALL to clear sent history)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -509,6 +509,22 @@
           total:  document.querySelectorAll(`[${SEL.msgAttr}]`).length,
           sent:   sent.size,
           pending: attempted.size,
+        });
+        break;
+      }
+      case 'FORCE_RESEND_ALL': {
+        console.log('[GG Tracker] FORCE_RESEND_ALL triggered - will resend ALL messages in DOM');
+        // Clear the sent set to force resend of all messages
+        const previouslySent = sent.size;
+        sent.clear();
+        attempted.clear();
+        const count = scanAll();
+        highlightTrackedUsers();
+        console.log(`[GG Tracker] FORCE_RESEND_ALL complete: resent ${count} messages (cleared ${previouslySent} from sent set)`);
+        sendResponse({
+          resent: count,
+          cleared: previouslySent,
+          total:  document.querySelectorAll(`[${SEL.msgAttr}]`).length,
         });
         break;
       }
