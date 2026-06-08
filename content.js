@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.5 — debug logging added)
+ * content.js — GG Chat Tracker Content Script  (v1.7 — retry failed messages on sync)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -66,8 +66,11 @@
   // STATE
   // ============================================================
 
-  /** Message IDs already forwarded to the background. */
+  /** Message IDs confirmed as successfully received by background. */
   const sent = new Set();
+
+  /** Message IDs that we attempted to send but may need retry. */
+  const attempted = new Map(); // msgId -> {parsed, attempts, lastAttempt}
 
   /**
    * Last successfully identified user.
@@ -83,6 +86,7 @@
   let observer  = null;
   let initTimer = null;
   const SCAN_INTERVAL_MS = 30_000;
+  const MAX_SEND_ATTEMPTS = 3;
 
   // ============================================================
   // CONTINUATION ATTRIBUTION — DOM traversal
@@ -329,12 +333,49 @@
   // SEND TO BACKGROUND
   // ============================================================
 
-  function sendToBg(parsed) {
+  function sendToBg(parsed, isRetry = false) {
     if (!parsed) return;
-    sent.add(parsed.msgId); // Mark before async send to prevent race dupes
+    
+    const msgId = parsed.msgId;
+    const now = Date.now();
+    
+    // Track attempt
+    const attemptInfo = attempted.get(msgId) || { attempts: 0, lastAttempt: 0 };
+    attemptInfo.attempts++;
+    attemptInfo.lastAttempt = now;
+    attemptInfo.parsed = parsed;
+    attempted.set(msgId, attemptInfo);
+    
+    console.log(`[GG Tracker] Sending message ${msgId} (attempt ${attemptInfo.attempts}${isRetry ? ', RETRY' : ''})`);
+    
     chrome.runtime.sendMessage({ type: 'NEW_MESSAGE', payload: parsed }, () => {
-      void chrome.runtime.lastError; // suppress "no listener" when popup closed
+      const err = chrome.runtime.lastError;
+      if (err) {
+        console.log(`[GG Tracker] Send failed for ${msgId}: ${err.message}`);
+        // Don't mark as sent - will be retried on next scan if under limit
+      } else {
+        sent.add(msgId);
+        attempted.delete(msgId); // Clean up on success
+        console.log(`[GG Tracker] Successfully sent message ${msgId}`);
+      }
     });
+  }
+  
+  /** Retry messages that failed to send previously */
+  function retryFailedMessages() {
+    let retryCount = 0;
+    attempted.forEach((info, msgId) => {
+      if (info.attempts < MAX_SEND_ATTEMPTS) {
+        sendToBg(info.parsed, true);
+        retryCount++;
+      } else {
+        console.log(`[GG Tracker] Giving up on message ${msgId} after ${info.attempts} attempts`);
+        attempted.delete(msgId);
+      }
+    });
+    if (retryCount > 0) {
+      console.log(`[GG Tracker] Retrying ${retryCount} failed messages`);
+    }
   }
 
   // ============================================================
@@ -346,23 +387,23 @@
    * Document order is critical: continuation messages must be processed
    * AFTER their preceding full message so DOM traversal succeeds.
    *
-   * KEY FIX v1.4: Do NOT reset lastUser state at start of scan.
-   * Instead, let it persist across messages within the same scan,
-   * so continuation messages can inherit from the previous full message.
-   * This is essential for capturing historical chat messages correctly.
-   * Returns count of newly sent messages.
+   * KEY FIX v1.7: Messages are only skipped if in `sent` Set (confirmed delivered).
+   * Messages that failed to send are kept in `attempted` Map and will be retried
+   * on next scan (including when user clicks Sync).
+   * Returns count of messages attempted (new + retries).
    */
   function scanAll() {
     // DO NOT reset lastUser here - we need it to persist across messages
     // so continuation messages can properly attribute to their sender.
     // The state will naturally update as we process full messages in order.
     const elements = document.querySelectorAll(`[${SEL.msgAttr}]`);
-    console.log(`[GG Tracker] scanAll: Found ${elements.length} total messages in DOM, ${sent.size} already sent`);
+    console.log(`[GG Tracker] scanAll: Found ${elements.length} total messages in DOM, ${sent.size} confirmed sent, ${attempted.size} pending retry`);
     let count = 0;
     let skipped = 0;
     let failed = 0;
     elements.forEach((el, idx) => {
       const msgId = el.getAttribute(SEL.msgAttr);
+      // Only skip if confirmed sent (not in attempted/retry queue)
       if (sent.has(msgId)) {
         skipped++;
         return;
@@ -376,7 +417,7 @@
         console.log(`[GG Tracker] Failed to parse message ${idx + 1}/${elements.length} (ID: ${msgId})`);
       }
     });
-    console.log(`[GG Tracker] scanAll: Captured ${count} new, skipped ${skipped} duplicates, ${failed} failed`);
+    console.log(`[GG Tracker] scanAll: Attempted ${count} (new/retry), skipped ${skipped} confirmed, ${failed} parse-failed`);
     return count;
   }
 
@@ -457,6 +498,9 @@
     switch (msg.type) {
       case 'SYNC_CHAT': {
         console.log('[GG Tracker] SYNC_CHAT triggered by user');
+        // First retry any failed messages from previous attempts
+        retryFailedMessages();
+        // Then scan for any new messages in DOM
         const count = scanAll();
         highlightTrackedUsers();
         console.log(`[GG Tracker] SYNC_CHAT complete: synced ${count} messages`);
@@ -464,6 +508,7 @@
           synced: count,
           total:  document.querySelectorAll(`[${SEL.msgAttr}]`).length,
           sent:   sent.size,
+          pending: attempted.size,
         });
         break;
       }
@@ -500,7 +545,7 @@
   const BOOT_DELAYS_MS = [0, 500, 1500, 3500, 7000];
 
   function init() {
-    console.log('[GG Tracker] v1.5 loaded →', window.location.href);
+    console.log('[GG Tracker] v1.7 loaded →', window.location.href);
 
     startObserver();
 
