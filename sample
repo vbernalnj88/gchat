@@ -1,0 +1,515 @@
+<div class="hidden md:flex min-h-0 w-full shrink-0 flex-col overflow-hidden bg-gray-900/40 backdrop-blur-xl border-white/[0.06]
+                        md:fixed md:bottom-[8.25rem] md:right-3 md:z-[119]
+                        md:rounded-2xl md:border md:border-white/[0.08] md:bg-gray-900/85 md:shadow-2xl md:shadow-black/50
+                        md:origin-bottom-right
+                        md:transition-[opacity,transform] md:duration-[400ms] md:ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                        md:opacity-100 md:scale-100 md:pointer-events-auto
+                    " style="width: 357px; height: 800px;">
+  <div class="hidden flex-shrink-0 border-b border-white/[0.06] md:flex md:items-center md:justify-between md:gap-2 md:px-3 md:py-2 md:select-none md:bg-gradient-to-r md:from-purple-950/55 md:via-fuchsia-950/35 md:to-transparent md:cursor-grab"><span class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-purple-300/70" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <circle cx="6" cy="4" r="1.2"></circle>
+        <circle cx="10" cy="4" r="1.2"></circle>
+        <circle cx="6" cy="8" r="1.2"></circle>
+        <circle cx="10" cy="8" r="1.2"></circle>
+        <circle cx="6" cy="12" r="1.2"></circle>
+        <circle cx="10" cy="12" r="1.2"></circle>
+      </svg><span class="text-[11px] font-bold uppercase tracking-[0.18em] text-purple-200/90">Chat</span></span><span class="flex items-center gap-1">
+      <div data-chat-overlay-control="true" class="relative"><button type="button" data-chat-overlay-control="true" class="flex h-7 items-center gap-1.5 rounded-md border border-purple-400/25 bg-white/[0.04] px-2 text-xs font-semibold text-purple-200 transition-colors duration-150 hover:border-purple-300/45 hover:bg-purple-500/15 hover:text-white focus:outline-none focus:ring-1 focus:ring-purple-400/50" aria-label="Players in session: 4" title="Players: 4"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="6" cy="5" r="2.5" stroke-width="1.4"></circle>
+            <path d="M2 13c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke-width="1.4" stroke-linecap="round"></path>
+            <circle cx="11" cy="5.5" r="2" stroke-width="1.4"></circle>
+            <path d="M10 9.2c2.5 0 4 1.6 4 3.8" stroke-width="1.4" stroke-linecap="round"></path>
+          </svg><span class="tabular-nums">4</span></button></div><button type="button" data-chat-overlay-control="true" class="flex h-7 w-7 items-center justify-center rounded-md text-gray-400 transition-colors duration-150 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-1 focus:ring-purple-400/50" aria-label="Minimize chat" title="Minimize chat"><svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8"></path>
+        </svg></button>
+    </span></div>
+  <div class="flex min-h-0 flex-1 flex-col">
+    <div class="relative flex-1 min-h-0">
+      <div class="absolute inset-0 overflow-x-hidden overflow-y-auto p-3">
+        <div class="flex min-h-full flex-col justify-end">
+          <div>
+            <div data-message-id="aebbb0c2-9070-4d75-978c-8c75c780898e" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-0" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:03 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Allright, there WE are</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="3c510ef2-ab39-4f39-9e2d-be1e2ebb50aa" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:03 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Ready?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="40164998-857a-44a7-8cca-5c53ed49cfa0" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:03 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Ready to</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="07d80e21-2a48-40e4-9e66-c85b0b6ab2e4" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:04 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I wouldn’t let a man me. I’m straight~</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2 mb-1 -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-100 hover:bg-white/[0.04]">
+              <div class="mx-auto w-fit max-w-[90%] rounded-xl border border-purple-400/20 bg-purple-500/10 px-3 py-2">
+                <p class="text-xs text-purple-200/90 break-words whitespace-pre-wrap leading-relaxed">It appears YourDesire has lost connection.</p>
+              </div>
+            </div>
+            <div data-message-id="8424ff9e-b012-4c21-a935-39b9896c848a" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:04 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">This’ll be you after i win</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="7849b67d-660e-443a-9826-d9d0216e2753" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:04 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Pfff, i bet yours ist a fraction of that</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="ed3768ef-2920-4172-9da5-12b95efa46ca" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:05 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">You’re gonna regret saying that 🤭</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2 mb-1 -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-100 hover:bg-white/[0.04]">
+              <div class="mx-auto w-fit max-w-[90%] rounded-xl border border-purple-400/20 bg-purple-500/10 px-3 py-2">
+                <p class="text-xs text-purple-200/90 break-words whitespace-pre-wrap leading-relaxed">It appears YourDesire has lost connection.</p>
+              </div>
+            </div>
+            <div data-message-id="f3d67d29-acf2-4357-bf45-2c4059465f67" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:05 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Idk why it says I’m losing connection by the way. I’m still here.</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="a9f6be70-af11-4db8-a029-25f191cb516b" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:05 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Yeah your good</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="82b870b8-78bc-4b78-a6a3-801ae664cfd0" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">But your Media needs Sound If you want to have a chance</p>
+              </div>
+            </div>
+            <div data-message-id="a034dd09-f6c6-4b10-81e2-d5d1167e9d25" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:06 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Ooh i play without volume so i wouldn’t know</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="f4648f3b-abac-4ffc-a677-3f7b0888dad1" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:06 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Damn okay, i allways Play with sound</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="6b4d586f-adc8-4adf-bd67-690b98c03990" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:07 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Are you a for feet?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="81b11476-c7b8-4c85-8a8f-e808954b8c5c" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Hmm, 50/50</p>
+              </div>
+            </div>
+            <div data-message-id="e325a5ea-9547-4d14-8a58-745c7c084ce0" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:07 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Naaah, don't Like that</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="8ddf3d2b-1871-4a70-a9ef-5b3dd98fb890" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:07 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">5/10 is pretty high for something you dislike</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="03324795-878b-4f8a-916c-93e3b8031d7b" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Haha nice try</p>
+              </div>
+            </div>
+            <div data-message-id="731107bb-dfef-464b-a412-7662ff7064f2" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:07 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">How about you then?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="2841f5a5-9047-40d6-a593-c01dd4537524" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Okay okay....</p>
+              </div>
+            </div>
+            <div data-message-id="8eae97b7-00d9-47ef-959e-9bf6921d242f" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:09 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Rate 8 cutie</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="e33de84e-93fa-4b98-ae64-bd8808ea1699" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">You’ll have more fun if to me~</p>
+              </div>
+            </div>
+            <div data-message-id="61e529a6-6111-4133-bd35-c6e9e81e12ae" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:09 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">This is Not an eight, sorry.</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="6619dfd0-9b4e-4138-af8e-53b366be969f" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I guess you will have to try Harder...</p>
+              </div>
+            </div>
+            <div data-message-id="e6810323-645e-4f5f-b80d-1d62f2def5c7" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:10 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I see that clip all the time</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="422424a5-eb20-4e3e-9032-2e26b537c73d" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">it’s fine</p>
+              </div>
+            </div>
+            <div data-message-id="2021898a-39fe-4846-a8b9-1922f8782ed9" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">not the best</p>
+              </div>
+            </div>
+            <div data-message-id="a33e8e5b-71de-4025-b560-efb20da23756" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:10 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Damn, okay okay, you are acting hard to get</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="70923bce-5c83-4ae1-95ad-ac2a4c9ae5b0" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:10 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I’m not acting though~</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="5c3ad159-06ba-46dc-b816-1f48cf859802" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:10 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Not Bad, but i have Seen better</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="9151aefc-f4c0-4ded-af7c-80efc1d461b5" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:11 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I bet you wished they’d team up . Am i right?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="c2f1315b-a54f-4523-a5a3-59acf6b0d88f" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:11 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">I wont comment in that one...</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="91135d3f-c25e-4108-83c7-5452b034b124" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:11 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">It’s ok, that comment was enough to inform me~</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="a05d3bbc-6fc3-4f92-a43a-c948ffc4fa0a" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:11 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">They wear too much</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="dd296943-5a4f-43b2-9a77-d9ea9c4654df" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:12 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Is this for you~?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="1c524e37-bd4c-479e-8316-7b3df3c1114f" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:13 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Yeah, but kinda unspectacular, you know?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="340484bd-3003-4de4-9bd9-5954d3d5a53f" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:13 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Fair enough</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="d385dd3c-950d-4f2d-9001-67eafd698ac6" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">you want something a bit *more*</p>
+              </div>
+            </div>
+            <div data-message-id="959f05b6-b581-4b3a-8f8a-375f24e69e98" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:14 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Well Let's see</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="a3916b43-9e90-4bce-be29-a22be06a6bb5" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:14 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Are you~?</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="17024f4c-13ce-423c-8c95-4b82ab3e28d5" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:14 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Well...</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="66ab68b4-bd3c-4f72-9786-1e486745be3b" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:14 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Aww</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="5a961bed-57b5-42c9-934a-44bd09fe9a51" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Good job</p>
+              </div>
+            </div>
+            <div data-message-id="5d45d2d3-5744-459e-9e99-98926b5c5342" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <div class="border-l-4 pl-3 py-2 border-blue-500 bg-blue-500/10">
+                  <div class="mb-1 flex flex-wrap items-center gap-2 text-xs font-semibold"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-black leading-none bg-blue-500 text-white">?</span><span class="text-blue-400">Question</span><span class="ml-auto inline-flex items-center gap-1 text-gray-500" aria-hidden="true"><span class="text-[11px] font-bold">→</span><span class="inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[11px] font-bold border-blue-400/40 bg-blue-500/15 text-blue-100"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-4 w-4 shrink-0 rounded-full object-cover"><span class="max-w-[10rem] truncate">GermanGoonBoy</span></span></span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Top 5 fav</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="121c0711-bab2-4dac-85fb-fd5612f0eea1" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1"><button type="button" class="group/reply mb-1 flex w-full max-w-full items-center gap-1.5 truncate text-left text-[11px] text-gray-400 transition-colors hover:text-purple-200" title="Jump to message"><svg class="h-3 w-3 shrink-0 opacity-60 group-hover/reply:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                    </svg><span class="shrink-0 font-semibold text-purple-300/90 group-hover/reply:text-purple-200">@alan_50</span><span class="min-w-0 truncate text-gray-400/80 group-hover/reply:text-gray-200">Good boy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></button>
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy</span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Shut Up, i will Turn this Game around</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="482af565-6a40-4586-9dd5-c85bc5a8d155" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">You will see</p>
+              </div>
+            </div>
+            <div data-message-id="402f99c1-ccd9-41cf-b694-dfd953bb822e" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Sure sure</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="3a12755e-9d22-4cbe-ba24-02cc62cff888" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="pl-10">
+                <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">hand over those fav</p>
+              </div>
+            </div>
+            <div data-message-id="91b7a6dc-ddf4-4b6b-a5e3-0da74d67dc29" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Mark my words</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="5b187b52-b89b-470a-9a4d-4ac33c9e8f38" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">and let’s see you submit to me~</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="8ae08cca-2907-4593-9208-3d75cdc0c487" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View GermanGoonBoy profile"><img src="/api/uploads/avatars/739ca712-1ede-4dc8-8fdb-276ac1472d5a-1780946227545.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">GermanGoonBoy<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">2,3,4,5,6</p>
+                </div>
+              </div>
+            </div>
+            <div data-message-id="d8a8d3b7-f046-43ff-b65f-b8368e6d896b" class="group/msg relative w-full -ml-3 -mr-5 pl-3 pr-5 py-0.5 transition-colors duration-200 hover:bg-white/[0.04] mt-3" data-gg-highlighted="1"><button type="button" class="absolute right-1.5 top-1 z-[1] hidden h-6 w-6 items-center justify-center rounded-md border border-white/10 bg-gray-900/90 text-gray-300 shadow-sm transition-colors hover:bg-gray-800 hover:text-purple-200 group-hover/msg:flex" aria-label="Reply" title="Reply"><svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14L4 9l5-5M4 9h10a6 6 0 016 6v0a6 6 0 01-6 6H8"></path>
+                </svg></button>
+              <div class="flex items-start gap-2"><button type="button" class="shrink-0 self-start rounded-full ring-2 ring-transparent transition hover:ring-purple-500/40 focus:outline-none focus:ring-purple-500/50" aria-label="View YourDesire profile"><img src="/api/uploads/avatars/2202b145-bc19-47ad-9294-d1a8275f8f87-1777898033634.jpg" alt="" class="h-8 w-8 shrink-0 rounded-full object-cover"></button>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-0"><button type="button" class="text-left min-w-0 bg-transparent p-0"><span class="inline-flex min-w-0 max-w-full items-center gap-1.5 text-sm font-semibold text-white hover:text-purple-200 hover:underline"><span class="min-w-0 truncate">YourDesire<span class="gg-badge" title="Tracked by GG Chat Tracker" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgb(168, 85, 247); margin-left: 4px; vertical-align: middle; opacity: 0.85; flex-shrink: 0;"></span></span></span></button><span class="text-[11px] md:text-xs text-gray-500 tabular-nums">4:15 PM</span></div>
+                  <p class="text-sm text-gray-200 break-words whitespace-pre-wrap leading-relaxed">Oho, you put up such a dominant front</p>
+                </div>
+              </div>
+            </div>
