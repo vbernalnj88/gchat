@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GG Chat Tracker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ═══════════════════════════════════════════════════════════ HEADER -->
+  <header id="hdr">
+    <div class="hdr-left">
+      <button id="btn-back" class="icon-btn hidden" title="Back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span id="hdr-title">GG Chat Tracker</span>
+    </div>
+    <div class="hdr-right">
+      <button id="btn-settings" class="icon-btn" title="Settings">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83
+                   2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33
+                   1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0
+                   009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0
+                   01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0
+                   00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9
+                   1.65 1.65 0 004.27 7.18l-.06-.06a2 2 0 012.83-2.83l.06.06
+                   A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0
+                   v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2
+                   2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0
+                   001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
+                stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════ MAIN VIEW -->
+  <div id="view-main" class="view">
+
+    <!-- Stats pill row -->
+    <div id="stats-row">
+      <span class="stat-pill" id="sp-profiles">0 profiles</span>
+      <span class="stat-pill" id="sp-messages">0 messages</span>
+      <span class="stat-pill" id="sp-sync">Never synced</span>
+    </div>
+
+    <!-- Big sync button -->
+    <div class="sync-wrap">
+      <button id="btn-sync" class="btn-sync">
+        <svg class="spin-icon" id="sync-spinner" width="14" height="14"
+             viewBox="0 0 24 24" fill="none">
+          <path d="M21 12a9 9 0 11-9-9c2.52 0 4.93 1 6.74 2.74L21 8"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M21 3v5h-5" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Sync Chat
+      </button>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-wrap">
+      <svg class="search-icon" width="13" height="13" viewBox="0 0 20 20" fill="none">
+        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M13.5 13.5L18 18" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search-input" placeholder="Search users or messages…" autocomplete="off"/>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="tab-bar">
+      <button class="tab active" data-tab="profiles">Profiles</button>
+      <button class="tab" data-tab="import">Paste Import</button>
+    </div>
+
+    <!-- ── PROFILES TAB ─────────────────────────────────────────── -->
+    <div id="tab-profiles" class="tab-content">
+      <div id="profile-list"></div>
+      <div id="empty-state" class="empty hidden">
+        <div class="empty-icon">💬</div>
+        <div>No profiles yet.<br>Head to gooning.games and click <b>Sync Chat</b>.</div>
+      </div>
+    </div>
+
+    <!-- ── IMPORT TAB ────────────────────────────────────────────── -->
+    <div id="tab-import" class="tab-content hidden">
+      <div class="import-body">
+        <p class="import-hint">
+          Paste chat logs from Discord, another session, etc.<br>
+          Formats: <code>"User: msg"</code> · <code>"[time] User: msg"</code>
+          · <code>"User - time: msg"</code>
+        </p>
+        <textarea id="import-area" placeholder="Paste chat here…"></textarea>
+        <div class="import-row">
+          <input type="text" id="import-target"
+                 placeholder="Assign all to user (optional)" />
+          <button id="btn-parse" class="btn-primary sm">Import</button>
+        </div>
+        <div id="import-status" class="import-status"></div>
+      </div>
+    </div>
+
+  </div><!-- /view-main -->
+
+  <!-- ══════════════════════════════════════════════ PROFILE DETAIL VIEW -->
+  <div id="view-profile" class="view hidden">
+    <div id="profile-detail"><!-- filled by JS --></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════ SETTINGS VIEW -->
+  <div id="view-settings" class="view hidden">
+    <div class="settings-body">
+      <h3 class="settings-heading">Data Management</h3>
+
+      <button id="btn-export" class="btn-secondary full">
+        📤 Export All Data (JSON)
+      </button>
+
+      <div class="settings-card">
+        <label class="card-label">Import JSON Backup</label>
+        <input type="file" id="file-import" accept=".json" />
+        <button id="btn-import-json" class="btn-secondary sm">📥 Load File</button>
+      </div>
+
+      <div class="settings-card danger-card">
+        <label class="card-label danger-label">Danger Zone</label>
+        <button id="btn-clear-all" class="btn-danger full">
+          🗑 Delete All Profiles & History
+        </button>
+      </div>
+
+      <div id="settings-msg" class="settings-msg"></div>
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<div id="toast-container"></div>
+
+<script src="popup.js"></script>
+</body>
+</html>
