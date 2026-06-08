@@ -1,12 +1,12 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.1 — continuation fix)
+ * content.js — GG Chat Tracker Content Script  (v1.2 — improved message detection)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
  *
- *  FULL message (new user block, class contains "mt-3"):
+ *  FULL message (new user block, class contains "mt-3" or "mt-0"):
  *    <div data-message-id="UUID" class="… mt-3">
- *      <div class="flex items-start gap-2">
+ *      <div class="flex items-start gap-2">              ← DIRECT CHILD
  *        <button aria-label="View USERNAME profile">   ← username source
  *          <img class="… rounded-full …" src="/api/uploads/…">
  *        </button>
@@ -20,7 +20,7 @@
  *
  *  CONTINUATION message (same user, no avatar re-shown, class "mt-1"):
  *    <div data-message-id="UUID" class="… mt-1">
- *      <div class="pl-10">                              ← indented, NO profile btn
+ *      <div class="pl-10">                              ← DIRECT CHILD, indented
  *        <p class="… whitespace-pre-wrap …">text</p>
  *      </div>
  *    </div>
@@ -55,8 +55,6 @@
     usernameTruncated: '.min-w-0.truncate',
     timestamp:         '.tabular-nums',
     messagePara:       'p.whitespace-pre-wrap, p.break-words, p.leading-relaxed',
-    continuationInner: '.pl-10',          // inner div on continuation messages
-    fullMsgInner:      '.flex.items-start', // inner div on full (new-user) messages
     borderYellow:      '[class*="border-yellow"]',
     borderBlue:        '[class*="border-blue"]',
     borderRed:         '[class*="border-red"]',
@@ -153,9 +151,12 @@
    *   • No message text found
    *   • Cannot attribute a username (genuine anonymous system card)
    *
-   * KEY FIX v1.1:
+   * KEY FIX v1.2:
    *   Continuation messages (mt-1 / pl-10 layout) carry no visible username.
-   *   We attribute them by:
+   *   We detect them by checking for the DIRECT CHILD structure:
+   *     - Full messages have: > div.flex.items-start.gap-2
+   *     - Continuation messages have: > div.pl-10
+   *   Attribution is done by:
    *     1. DOM traversal back to the nearest full message  (reliable)
    *     2. Fallback to `lastUser` module-level state      (catch-all)
    */
@@ -165,11 +166,16 @@
 
     // ── Detect message layout ─────────────────────────────────────────
     //
-    //  Full messages have: <div class="flex items-start gap-2"> inside
-    //  Continuation messages have: <div class="pl-10"> inside
+    //  Full messages have a DIRECT CHILD: <div class="flex items-start gap-2">
+    //  Continuation messages have a DIRECT CHILD: <div class="pl-10">
     //
-    const hasProfileArea = !!el.querySelector(SEL.fullMsgInner);
-    const isContinuation = !hasProfileArea && !!el.querySelector(SEL.continuationInner);
+    //  We use :scope > to ensure we're checking direct children only.
+    //
+    const fullMsgChild = el.querySelector(':scope > .flex.items-start, :scope > div.flex');
+    const continuationChild = el.querySelector(':scope > .pl-10, :scope > div[class*="pl-10"]');
+    
+    const hasProfileArea = !!fullMsgChild;
+    const isContinuation = !!continuationChild && !hasProfileArea;
 
     // ── USERNAME ──────────────────────────────────────────────────────
 
@@ -179,18 +185,18 @@
 
     if (hasProfileArea) {
       // ── Full message: extract from profile button aria-label ──────
-      const profileBtn = el.querySelector(SEL.profileBtn);
+      const profileBtn = fullMsgChild.querySelector(SEL.profileBtn);
       if (profileBtn) {
         const m = (profileBtn.getAttribute('aria-label') || '')
           .match(/^View\s+(.+?)\s+profile$/);
         if (m) username = m[1].trim();
         // Grab real avatar URL from the <img> inside the button
-        const img = profileBtn.querySelector('img') ?? el.querySelector(SEL.avatarImg);
+        const img = profileBtn.querySelector('img') ?? fullMsgChild.querySelector(SEL.avatarImg);
         if (img) avatarUrl = img.src;
       }
       // Fallback: visible truncated span (future-proof)
       if (!username) {
-        const span = el.querySelector(SEL.usernameTruncated);
+        const span = fullMsgChild.querySelector(SEL.usernameTruncated);
         if (span) username = safeText(span) || null;
       }
     }
@@ -454,7 +460,7 @@
   const BOOT_DELAYS_MS = [0, 500, 1500, 3500, 7000];
 
   function init() {
-    console.log('[GG Tracker] v1.1 loaded →', window.location.href);
+    console.log('[GG Tracker] v1.2 loaded →', window.location.href);
 
     startObserver();
 
