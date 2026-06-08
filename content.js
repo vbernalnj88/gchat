@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.4 — fixed historical message capture)
+ * content.js — GG Chat Tracker Content Script  (v1.5 — debug logging added)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -169,6 +169,8 @@
     const msgId = el.getAttribute(SEL.msgAttr);
     if (!msgId || sent.has(msgId)) return null;
 
+    console.log(`[GG Tracker] Parsing message ID: ${msgId}`);
+
     // ── Detect message layout ─────────────────────────────────────────
     //
     //  Full messages have a DIRECT CHILD with profile button OR class "flex items-start gap-2"
@@ -183,6 +185,8 @@
     
     const hasProfileArea = hasProfileBtn || (!!fullMsgChild && !continuationChild);
     const isContinuation = !!continuationChild && !hasProfileArea;
+
+    console.log(`[GG Tracker] Message ${msgId}: hasProfileArea=${hasProfileArea}, isContinuation=${isContinuation}`);
 
     // ── USERNAME ──────────────────────────────────────────────────────
 
@@ -206,6 +210,7 @@
         const span = el.querySelector(SEL.usernameTruncated);
         if (span) username = safeText(span) || null;
       }
+      console.log(`[GG Tracker] Message ${msgId}: Full message - username=${username}, avatarUrl=${avatarUrl ? 'found' : 'null'}`);
     }
 
     if (!username && isContinuation) {
@@ -217,6 +222,7 @@
       if (prev) {
         username  = prev.username;
         avatarUrl = prev.avatarUrl;
+        console.log(`[GG Tracker] Message ${msgId}: Continuation - found via DOM traversal: username=${username}`);
       }
 
       // Strategy 2 — module-level state (fallback, handles edge cases
@@ -225,11 +231,15 @@
         username      = lastUser.username;
         avatarUrl     = avatarUrl ?? lastUser.avatarUrl;
         avatarInitial = lastUser.avatarInitial;
+        console.log(`[GG Tracker] Message ${msgId}: Continuation - found via lastUser state: username=${username}`);
       }
     }
 
     // Cannot attribute — genuine anonymous system message, skip
-    if (!username) return null;
+    if (!username) {
+      console.log(`[GG Tracker] Message ${msgId}: SKIPPED - no username could be attributed`);
+      return null;
+    }
 
     // ── Update lastUser state for subsequent continuations ────────────
     //    Only update on full messages so the state always points to the
@@ -347,12 +357,26 @@
     // so continuation messages can properly attribute to their sender.
     // The state will naturally update as we process full messages in order.
     const elements = document.querySelectorAll(`[${SEL.msgAttr}]`);
+    console.log(`[GG Tracker] scanAll: Found ${elements.length} total messages in DOM, ${sent.size} already sent`);
     let count = 0;
-    elements.forEach(el => {
-      if (sent.has(el.getAttribute(SEL.msgAttr))) return;
+    let skipped = 0;
+    let failed = 0;
+    elements.forEach((el, idx) => {
+      const msgId = el.getAttribute(SEL.msgAttr);
+      if (sent.has(msgId)) {
+        skipped++;
+        return;
+      }
       const parsed = parseMessageEl(el);
-      if (parsed) { sendToBg(parsed); count++; }
+      if (parsed) { 
+        sendToBg(parsed); 
+        count++; 
+      } else {
+        failed++;
+        console.log(`[GG Tracker] Failed to parse message ${idx + 1}/${elements.length} (ID: ${msgId})`);
+      }
     });
+    console.log(`[GG Tracker] scanAll: Captured ${count} new, skipped ${skipped} duplicates, ${failed} failed`);
     return count;
   }
 
@@ -432,8 +456,10 @@
   chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     switch (msg.type) {
       case 'SYNC_CHAT': {
+        console.log('[GG Tracker] SYNC_CHAT triggered by user');
         const count = scanAll();
         highlightTrackedUsers();
+        console.log(`[GG Tracker] SYNC_CHAT complete: synced ${count} messages`);
         sendResponse({
           synced: count,
           total:  document.querySelectorAll(`[${SEL.msgAttr}]`).length,
@@ -474,7 +500,7 @@
   const BOOT_DELAYS_MS = [0, 500, 1500, 3500, 7000];
 
   function init() {
-    console.log('[GG Tracker] v1.4 loaded →', window.location.href);
+    console.log('[GG Tracker] v1.5 loaded →', window.location.href);
 
     startObserver();
 
@@ -493,7 +519,10 @@
     // Periodic fallback — catches scroll-loaded history, reconnects, etc.
     setInterval(() => {
       const n = scanAll();
-      if (n > 0) highlightTrackedUsers();
+      if (n > 0) {
+        console.log(`[GG Tracker] periodic scan: ${n} new messages`);
+        highlightTrackedUsers();
+      }
     }, SCAN_INTERVAL_MS);
   }
 
