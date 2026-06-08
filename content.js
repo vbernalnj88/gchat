@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.2 — improved message detection)
+ * content.js — GG Chat Tracker Content Script  (v1.3 — fixed historical message capture)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -95,12 +95,17 @@
    *
    * This is the primary attribution method for continuation messages.
    * It is O(n) but n is typically tiny (< 5 hops back).
+   * 
+   * KEY FIX v1.3: Also check if sibling itself contains a profile button
+   * directly (not just via querySelector) to handle cases where the
+   * profile button is nested differently in historical messages.
    */
   function findPreviousUser(el) {
     let sibling = el.previousElementSibling;
     let hops = 0;
     while (sibling && hops < 30) {
       if (sibling.hasAttribute && sibling.hasAttribute(SEL.msgAttr)) {
+        // Try direct child first, then nested
         const btn = sibling.querySelector(SEL.profileBtn);
         if (btn) {
           const m = (btn.getAttribute('aria-label') || '')
@@ -151,10 +156,10 @@
    *   • No message text found
    *   • Cannot attribute a username (genuine anonymous system card)
    *
-   * KEY FIX v1.2:
+   * KEY FIX v1.3:
    *   Continuation messages (mt-1 / pl-10 layout) carry no visible username.
    *   We detect them by checking for the DIRECT CHILD structure:
-   *     - Full messages have: > div.flex.items-start.gap-2
+   *     - Full messages have: > div.flex.items-start.gap-2 OR > div containing profile button
    *     - Continuation messages have: > div.pl-10
    *   Attribution is done by:
    *     1. DOM traversal back to the nearest full message  (reliable)
@@ -166,15 +171,17 @@
 
     // ── Detect message layout ─────────────────────────────────────────
     //
-    //  Full messages have a DIRECT CHILD: <div class="flex items-start gap-2">
-    //  Continuation messages have a DIRECT CHILD: <div class="pl-10">
+    //  Full messages have a DIRECT CHILD with profile button OR class "flex items-start gap-2"
+    //  Continuation messages have a DIRECT CHILD with class "pl-10"
     //
     //  We use :scope > to ensure we're checking direct children only.
+    //  Check for profile button first as it's the most reliable indicator
     //
-    const fullMsgChild = el.querySelector(':scope > .flex.items-start, :scope > div.flex');
+    const hasProfileBtn = !!el.querySelector(':scope > * ' + SEL.profileBtn);
+    const fullMsgChild = el.querySelector(':scope > .flex, :scope > div[class*="flex"]');
     const continuationChild = el.querySelector(':scope > .pl-10, :scope > div[class*="pl-10"]');
     
-    const hasProfileArea = !!fullMsgChild;
+    const hasProfileArea = hasProfileBtn || (!!fullMsgChild && !continuationChild);
     const isContinuation = !!continuationChild && !hasProfileArea;
 
     // ── USERNAME ──────────────────────────────────────────────────────
@@ -185,18 +192,18 @@
 
     if (hasProfileArea) {
       // ── Full message: extract from profile button aria-label ──────
-      const profileBtn = fullMsgChild.querySelector(SEL.profileBtn);
+      const profileBtn = hasProfileBtn ? el.querySelector(':scope > * ' + SEL.profileBtn) : (fullMsgChild?.querySelector(SEL.profileBtn));
       if (profileBtn) {
         const m = (profileBtn.getAttribute('aria-label') || '')
           .match(/^View\s+(.+?)\s+profile$/);
         if (m) username = m[1].trim();
         // Grab real avatar URL from the <img> inside the button
-        const img = profileBtn.querySelector('img') ?? fullMsgChild.querySelector(SEL.avatarImg);
+        const img = profileBtn.querySelector('img') ?? el.querySelector(SEL.avatarImg);
         if (img) avatarUrl = img.src;
       }
       // Fallback: visible truncated span (future-proof)
       if (!username) {
-        const span = fullMsgChild.querySelector(SEL.usernameTruncated);
+        const span = el.querySelector(SEL.usernameTruncated);
         if (span) username = safeText(span) || null;
       }
     }
@@ -329,9 +336,16 @@
    * Document order is critical: continuation messages must be processed
    * AFTER their preceding full message so DOM traversal succeeds.
    *
+   * KEY FIX v1.3: Reset lastUser state before each scan to ensure proper
+   * attribution when processing historical messages that may have different
+   * user sequences than what was previously seen live.
+   *
    * Returns count of newly sent messages.
    */
   function scanAll() {
+    // Reset lastUser state at start of each scan for clean attribution
+    lastUser = { username: null, avatarUrl: null, avatarInitial: null, timestamp: null };
+    
     const elements = document.querySelectorAll(`[${SEL.msgAttr}]`);
     let count = 0;
     elements.forEach(el => {
@@ -460,7 +474,7 @@
   const BOOT_DELAYS_MS = [0, 500, 1500, 3500, 7000];
 
   function init() {
-    console.log('[GG Tracker] v1.2 loaded →', window.location.href);
+    console.log('[GG Tracker] v1.3 loaded →', window.location.href);
 
     startObserver();
 
