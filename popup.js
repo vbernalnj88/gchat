@@ -583,6 +583,29 @@ function wireEvents() {
   // Sync button
   $('#btn-sync').addEventListener('click', doSync);
 
+  // Force resend button
+  $('#btn-force-resend').addEventListener('click', async () => {
+    if (!confirm('This will clear the sent history and resend ALL messages in the chat. Make sure your server is ready to receive them. Continue?')) {
+      return;
+    }
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab) {
+      alert('No active tab found.');
+      return;
+    }
+    try {
+      const response = await chrome.tabs.sendMessage(tab.id, { type: 'FORCE_RESEND_ALL' });
+      console.log('[Popup] Force resend result:', response);
+      alert(`Force resend complete!\n\nResent: ${response.resent} messages\nCleared from history: ${response.cleared}\nTotal in DOM: ${response.total}`);
+      // Refresh stats
+      await loadData();
+      renderMain();
+    } catch (err) {
+      console.error('[Popup] Force resend error:', err);
+      alert('Failed to communicate with content script. Make sure you are on a gooning.games chat page and the extension is loaded.');
+    }
+  });
+
   // Search input
   $('#search-input').addEventListener('input', e => {
     S.query = e.target.value;
