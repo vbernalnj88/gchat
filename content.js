@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.3 — fixed historical message capture)
+ * content.js — GG Chat Tracker Content Script  (v1.4 — fixed historical message capture)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -336,16 +336,16 @@
    * Document order is critical: continuation messages must be processed
    * AFTER their preceding full message so DOM traversal succeeds.
    *
-   * KEY FIX v1.3: Reset lastUser state before each scan to ensure proper
-   * attribution when processing historical messages that may have different
-   * user sequences than what was previously seen live.
-   *
+   * KEY FIX v1.4: Do NOT reset lastUser state at start of scan.
+   * Instead, let it persist across messages within the same scan,
+   * so continuation messages can inherit from the previous full message.
+   * This is essential for capturing historical chat messages correctly.
    * Returns count of newly sent messages.
    */
   function scanAll() {
-    // Reset lastUser state at start of each scan for clean attribution
-    lastUser = { username: null, avatarUrl: null, avatarInitial: null, timestamp: null };
-    
+    // DO NOT reset lastUser here - we need it to persist across messages
+    // so continuation messages can properly attribute to their sender.
+    // The state will naturally update as we process full messages in order.
     const elements = document.querySelectorAll(`[${SEL.msgAttr}]`);
     let count = 0;
     elements.forEach(el => {
@@ -474,7 +474,7 @@
   const BOOT_DELAYS_MS = [0, 500, 1500, 3500, 7000];
 
   function init() {
-    console.log('[GG Tracker] v1.3 loaded →', window.location.href);
+    console.log('[GG Tracker] v1.4 loaded →', window.location.href);
 
     startObserver();
 
