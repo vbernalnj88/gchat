@@ -533,18 +533,64 @@
         break;
       }
       case 'FORCE_RESEND_ALL': {
-        console.log('[GG Tracker] FORCE_RESEND_ALL triggered - will resend ALL messages in DOM');
-        // Clear the sent set to force resend of all messages
+        console.log('[GG Tracker] FORCE_RESEND_ALL triggered - clearing history and batching all messages');
+        
+        // Clear the sent set immediately
         const previouslySent = sent.size;
         sent.clear();
         attempted.clear();
-        const count = scanAll();
-        highlightTrackedUsers();
-        console.log(`[GG Tracker] FORCE_RESEND_ALL complete: resent ${count} messages (cleared ${previouslySent} from sent set)`);
-        sendResponse({
-          resent: count,
-          cleared: previouslySent,
-          total:  document.querySelectorAll(`[${SEL.msgAttr}]`).length,
+        
+        // Grab ALL messages from the DOM right now
+        const allMessageNodes = Array.from(document.querySelectorAll(MESSAGE_SELECTOR));
+        const totalMessages = allMessageNodes.length;
+        
+        if (totalMessages === 0) {
+            console.log('[GG Tracker] No messages found in DOM to resend');
+            sendResponse({ resent: 0, cleared: previouslySent, total: 0 });
+            return;
+        }
+
+        console.log(`[GG Tracker] Found ${totalMessages} messages to batch resend`);
+
+        let successCount = 0;
+        let failCount = 0;
+
+        // Process all messages in a tight loop
+        for (const node of allMessageNodes) {
+            const parsed = parseMessageNode(node);
+            if (!parsed) {
+                failCount++;
+                continue;
+            }
+
+            // Fire and forget for the batch, but track locally
+            chrome.runtime.sendMessage({ type: 'CHAT_MESSAGE', ...parsed }, (response) => {
+                if (chrome.runtime.lastError || !response?.success) {
+                    failCount++;
+                } else {
+                    successCount++;
+                    // Add to sent set immediately so normal scan ignores them
+                    sent.add(parsed.id);
+                }
+                
+                // Log completion when the last one finishes (approximate)
+                if (successCount + failCount >= totalMessages) {
+                    console.log(`[GG Tracker] Batch resend complete: ${successCount} sent, ${failCount} failed`);
+                }
+            });
+            
+            // Optimistically add to attempted to prevent double firing if scan runs mid-batch
+            attempted.set(parsed.id, 1);
+        }
+
+        console.log(`[GG Tracker] Dispatched ${totalMessages} messages for batch resend (cleared ${previouslySent} from sent set)`);
+        
+        // Respond immediately with the count we're processing
+        sendResponse({ 
+            resent: totalMessages, 
+            cleared: previouslySent, 
+            total: totalMessages,
+            status: 'batch_processing'
         });
         break;
       }
