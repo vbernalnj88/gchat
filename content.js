@@ -556,9 +556,7 @@
         let failCount = 0;
         let completedCount = 0;
 
-        // Process all messages - collect promises for proper async handling
-        const sendPromises = [];
-        
+        // Process all messages synchronously without waiting for background response
         for (const node of allMessageNodes) {
             const parsed = parseMessageNode(node);
             if (!parsed) {
@@ -567,22 +565,24 @@
                 continue;
             }
 
-            // Create a promise for each send operation
-            const promise = new Promise((resolve) => {
+            // Send fire-and-forget (don't wait for response)
+            try {
                 chrome.runtime.sendMessage({ type: 'CHAT_MESSAGE', ...parsed }, (response) => {
-                    completedCount++;
-                    if (chrome.runtime.lastError || !response?.success) {
-                        failCount++;
-                        resolve(false);
-                    } else {
+                    // Optional callback just for logging
+                    if (!chrome.runtime.lastError && response?.success) {
                         successCount++;
                         sent.add(parsed.id);
-                        resolve(true);
+                    } else {
+                        failCount++;
                     }
+                    completedCount++;
                 });
-            });
+            } catch (e) {
+                console.warn('[GG Tracker] Send failed for', parsed.id, e);
+                failCount++;
+                completedCount++;
+            }
             
-            sendPromises.push(promise);
             attempted.set(parsed.id, 1);
         }
 
@@ -593,7 +593,7 @@
             resent: totalMessages, 
             cleared: previouslySent, 
             total: totalMessages,
-            status: 'batch_processing'
+            status: 'batch_dispatched'
         });
         return false; // Response already sent, no need to keep channel open
       }
