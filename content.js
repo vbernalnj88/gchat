@@ -547,39 +547,42 @@
         if (totalMessages === 0) {
             console.log('[GG Tracker] No messages found in DOM to resend');
             sendResponse({ resent: 0, cleared: previouslySent, total: 0 });
-            return true;
+            return false; // No need to keep channel open
         }
 
         console.log(`[GG Tracker] Found ${totalMessages} messages to batch resend`);
 
         let successCount = 0;
         let failCount = 0;
+        let completedCount = 0;
 
-        // Process all messages in a tight loop
+        // Process all messages - collect promises for proper async handling
+        const sendPromises = [];
+        
         for (const node of allMessageNodes) {
             const parsed = parseMessageNode(node);
             if (!parsed) {
                 failCount++;
+                completedCount++;
                 continue;
             }
 
-            // Fire and forget for the batch, but track locally
-            chrome.runtime.sendMessage({ type: 'CHAT_MESSAGE', ...parsed }, (response) => {
-                if (chrome.runtime.lastError || !response?.success) {
-                    failCount++;
-                } else {
-                    successCount++;
-                    // Add to sent set immediately so normal scan ignores them
-                    sent.add(parsed.id);
-                }
-                
-                // Log completion when the last one finishes (approximate)
-                if (successCount + failCount >= totalMessages) {
-                    console.log(`[GG Tracker] Batch resend complete: ${successCount} sent, ${failCount} failed`);
-                }
+            // Create a promise for each send operation
+            const promise = new Promise((resolve) => {
+                chrome.runtime.sendMessage({ type: 'CHAT_MESSAGE', ...parsed }, (response) => {
+                    completedCount++;
+                    if (chrome.runtime.lastError || !response?.success) {
+                        failCount++;
+                        resolve(false);
+                    } else {
+                        successCount++;
+                        sent.add(parsed.id);
+                        resolve(true);
+                    }
+                });
             });
             
-            // Optimistically add to attempted to prevent double firing if scan runs mid-batch
+            sendPromises.push(promise);
             attempted.set(parsed.id, 1);
         }
 
@@ -592,7 +595,7 @@
             total: totalMessages,
             status: 'batch_processing'
         });
-        return true; // Keep channel open for async response
+        return false; // Response already sent, no need to keep channel open
       }
       case 'GET_CHAT_INFO': {
         sendResponse({
