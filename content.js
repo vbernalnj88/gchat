@@ -547,7 +547,7 @@
         if (totalMessages === 0) {
             console.log('[GG Tracker] No messages found in DOM to resend');
             sendResponse({ resent: 0, cleared: previouslySent, total: 0 });
-            return;
+            return true;
         }
 
         console.log(`[GG Tracker] Found ${totalMessages} messages to batch resend`);
@@ -592,7 +592,7 @@
             total: totalMessages,
             status: 'batch_processing'
         });
-        break;
+        return true; // Keep channel open
       }
       case 'GET_CHAT_INFO': {
         sendResponse({
