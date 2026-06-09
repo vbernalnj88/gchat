@@ -594,18 +594,28 @@ function wireEvents() {
       return;
     }
     try {
+      // Use Promise with proper timeout handling
       const response = await new Promise((resolve, reject) => {
+        // Set a timeout to prevent hanging
+        const timeoutId = setTimeout(() => {
+          reject(new Error('Request timed out - content script may not be loaded'));
+        }, 5000);
+        
         chrome.tabs.sendMessage(tab.id, { type: 'FORCE_RESEND_ALL' }, (res) => {
+          clearTimeout(timeoutId);
           if (chrome.runtime.lastError) {
-            reject(new Error(chrome.runtime.lastError.message));
+            reject(new Error(chrome.runtime.lastError.message || 'Communication failed'));
+          } else if (res === undefined) {
+            reject(new Error('Content script returned undefined - make sure you are on gooning.games'));
           } else {
             resolve(res);
           }
         });
       });
+      
       console.log('[Popup] Force resend result:', response);
-      if (!response) {
-        throw new Error('No response from content script');
+      if (!response || typeof response.resent === 'undefined') {
+        throw new Error('Invalid response from content script');
       }
       alert(`Force resend complete!\n\nResent: ${response.resent} messages\nCleared from history: ${response.cleared}\nTotal in DOM: ${response.total}`);
       // Refresh stats
@@ -613,7 +623,15 @@ function wireEvents() {
       renderMain();
     } catch (err) {
       console.error('[Popup] Force resend error:', err);
-      alert('Failed to communicate with content script. Make sure you are on a gooning.games chat page and the extension is loaded.\n\nError: ' + err.message);
+      let errorMsg = err.message || 'Unknown error';
+      
+      // Provide more helpful error messages
+      if (errorMsg.includes('Could not establish connection') || 
+          errorMsg.includes('The message port closed')) {
+        errorMsg = 'Content script not responding.\n\n1. Make sure you are on a gooning.games chat page (not just the homepage)\n2. Wait a few seconds for the chat to fully load\n3. Try refreshing the page and clicking "Force Resend All" again\n4. Check chrome://extensions to ensure the extension is loaded';
+      }
+      
+      alert('Failed to communicate with content script:\n\n' + errorMsg);
     }
   });
 
