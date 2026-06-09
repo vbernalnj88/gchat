@@ -594,15 +594,26 @@ function wireEvents() {
       return;
     }
     try {
-      const response = await chrome.tabs.sendMessage(tab.id, { type: 'FORCE_RESEND_ALL' });
+      const response = await new Promise((resolve, reject) => {
+        chrome.tabs.sendMessage(tab.id, { type: 'FORCE_RESEND_ALL' }, (res) => {
+          if (chrome.runtime.lastError) {
+            reject(new Error(chrome.runtime.lastError.message));
+          } else {
+            resolve(res);
+          }
+        });
+      });
       console.log('[Popup] Force resend result:', response);
+      if (!response) {
+        throw new Error('No response from content script');
+      }
       alert(`Force resend complete!\n\nResent: ${response.resent} messages\nCleared from history: ${response.cleared}\nTotal in DOM: ${response.total}`);
       // Refresh stats
       await loadData();
       renderMain();
     } catch (err) {
       console.error('[Popup] Force resend error:', err);
-      alert('Failed to communicate with content script. Make sure you are on a gooning.games chat page and the extension is loaded.');
+      alert('Failed to communicate with content script. Make sure you are on a gooning.games chat page and the extension is loaded.\n\nError: ' + err.message);
     }
   });
 
