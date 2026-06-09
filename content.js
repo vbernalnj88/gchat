@@ -1,5 +1,5 @@
 /**
- * content.js — GG Chat Tracker Content Script  (v1.8 — added FORCE_RESEND_ALL to clear sent history)
+ * content.js — GG Chat Tracker Content Script  (v1.9 — fixed task/question card username extraction)
  *
  * ─────────────────────────────────────────────────────────────────────
  * SELECTOR GUIDE (gooning.games Tailwind/React HTML — confirmed live):
@@ -178,7 +178,8 @@
     // ── Detect message layout ─────────────────────────────────────────
     //
     //  Full messages have a DIRECT CHILD with profile button OR class "flex items-start gap-2"
-    //  Continuation messages have a DIRECT CHILD with class "pl-10"
+    //  Continuation messages have a DIRECT CHILD with class "pl-10" BUT not task/question cards
+    //  Task/Question cards also have pl-10 but contain special border divs with username inside
     //
     //  We use :scope > to ensure we're checking direct children only.
     //  Check for profile button first as it's the most reliable indicator
@@ -187,10 +188,14 @@
     const fullMsgChild = el.querySelector(':scope > .flex, :scope > div[class*="flex"]');
     const continuationChild = el.querySelector(':scope > .pl-10, :scope > div[class*="pl-10"]');
     
-    const hasProfileArea = hasProfileBtn || (!!fullMsgChild && !continuationChild);
+    // Check if this is a task/question card (has special border classes)
+    const isTaskQuestion = !!(el.querySelector(SEL.borderYellow) || el.querySelector(SEL.borderBlue));
+    
+    // Task/question cards with pl-10 are NOT continuations - they have username inside the card
+    const hasProfileArea = hasProfileBtn || (!!fullMsgChild && !continuationChild) || isTaskQuestion;
     const isContinuation = !!continuationChild && !hasProfileArea;
 
-    console.log(`[GG Tracker] Message ${msgId}: hasProfileArea=${hasProfileArea}, isContinuation=${isContinuation}`);
+    console.log(`[GG Tracker] Message ${msgId}: hasProfileArea=${hasProfileArea}, isContinuation=${isContinuation}, isTaskQuestion=${isTaskQuestion}`);
 
     // ── USERNAME ──────────────────────────────────────────────────────
 
@@ -214,6 +219,21 @@
         const span = el.querySelector(SEL.usernameTruncated);
         if (span) username = safeText(span) || null;
       }
+      
+      // Special handling for task/question cards - extract username from the pill badge
+      if (isTaskQuestion && !username) {
+        // The target username lives in the pill badge: class contains "max-w-"
+        // e.g. <span class="max-w-[10rem] truncate">GermanGoonBoy</span>
+        for (const badge of el.querySelectorAll('[class*="max-w-"]')) {
+          const t = safeText(badge);
+          if (t && t.length < 60) { 
+            username = t; 
+            console.log(`[GG Tracker] Message ${msgId}: Task/Question - extracted username from badge: ${username}`);
+            break; 
+          }
+        }
+      }
+      
       console.log(`[GG Tracker] Message ${msgId}: Full message - username=${username}, avatarUrl=${avatarUrl ? 'found' : 'null'}`);
     }
 
