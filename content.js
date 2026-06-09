@@ -592,7 +592,7 @@
             total: totalMessages,
             status: 'batch_processing'
         });
-        return true; // Keep channel open
+        return true; // Keep channel open for async response
       }
       case 'GET_CHAT_INFO': {
         sendResponse({
